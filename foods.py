@@ -39,6 +39,5 @@ print(chicken["fat"])
 print(ingredients[1]["name"])
 
 #practising for loop
-
 for ingredient in ingredients:
     print("Ingredient:", ingredient["name"])
