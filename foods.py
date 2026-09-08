@@ -35,9 +35,3 @@ broccoli  = {
 
 ingredients = [chicken, pasta, broccoli, rice]
 #print(chicken, pasta, broccoli, rice)
-print(chicken["fat"])
-print(ingredients[1]["name"])
-
-#practising for loop
-for ingredient in ingredients:
-    print("Ingredient:", ingredient["name"])

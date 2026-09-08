@@ -1,2 +1,3 @@
 #This file tells git what to ignore when commiting changes and pushing them to my repo
 .DS_Store
+__pycache__
