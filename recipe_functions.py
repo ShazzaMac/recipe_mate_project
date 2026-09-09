@@ -18,8 +18,14 @@ def scaleRecipe(amount, servings):
       result = amount/ servings
       return result  
 
-def calculateMacros():
-      return
+def calculateMacros(ingredient, grams): #here we are making use of dictionaries nside the function
+      calories = ingredient["calories"] * grams / 100
+      protein =  ingredient["protein"] * grams / 100
+      return calories, protein
 
 def displayRecipe(recipe):
       return
+
+def calculateProtein(protein_per_100g, grams):
+         result = protein_per_100g * grams / 100
+         return result   
