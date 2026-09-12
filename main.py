@@ -109,3 +109,40 @@ print("Total protein:", total_protein)
 #using it is a function 
 total_protein = recipe_functions.calculateTotalProtein(foods.ingredients)
 print("Total protein:", total_protein)
+
+#building the menu with a while loop and ifelse statements
+
+choice = ""
+while choice != "8":
+    print( "==================== \n" 
+     "RecipeMate \n" 
+"==================== \n"
+"1. View recipes \n"
+"2. Convert recipes \n"
+"3. Change serving sizes \n"
+"4. Calculate macros \n"
+"5. Set macro goals \n"
+"6. Find recipes \n"
+"7. Add recipes \n"
+"8. Exit \n"
+"====================")
+    
+    choice = input("Please enter a choice")
+    if choice == "1":
+        print("you have chosen to: View recipes")
+    elif choice == "2":
+        print("you have chosen to: Convert recipes")
+    elif choice == "3":
+        print("you have chosen to: Change serving sizes")   
+    elif choice == "4":
+        print("you have chosen to: Calculate macros")
+    elif choice == "5":
+        print("you have chosen to: Set macro goals")
+    elif choice == "6":
+        print("you have chosen to: Find recipes")
+    elif choice == "7":
+        print("you have chosen to: Add recipes")
+    elif choice == "8":
+        print("you have chosen to: Exit")
+    else:
+        print("you have not chosen a valid option")
