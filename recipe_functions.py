@@ -32,3 +32,10 @@ def displayRecipe(recipe):
 def calculateProtein(protein_per_100g, grams):
          result = protein_per_100g * grams / 100
          return result   
+
+#function to calculate the total protein of ingredients. ingredients is the parameter
+def calculateTotalProtein(ingredient):
+      total_protein = 0
+      for ingredient in foods.ingredients:
+            total_protein = total_protein + ingredient["protein"]
+      return total_protein

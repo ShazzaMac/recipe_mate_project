@@ -93,3 +93,19 @@ else:
 #working on for loops 
 for ingredient in foods.ingredients:
     print(ingredient["name"])
+
+#for loop to add calories for ingredients 
+total_calories = 0
+for ingredient in foods.ingredients:
+    total_calories = total_calories + ingredient ["calories"]
+print("Total calories:", total_calories)
+
+#for loop to add protein for ingredients 
+total_protein = 0
+for ingredient in foods.ingredients:
+    total_protein = total_protein + ingredient ["protein"]
+print("Total protein:", total_protein)
+
+#using it is a function 
+total_protein = recipe_functions.calculateTotalProtein(foods.ingredients)
+print("Total protein:", total_protein)
