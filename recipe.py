@@ -11,7 +11,11 @@ class Recipe:
         print("Recipe:", self.name)
 
     def scale_recipe(self, new_serving):
+        scaling_factor = new_serving / self.servings #this is to create a way to scale serving sizes and in effect calories and amounts of ingredients needed for recipes.
+        for ingredient in self.ingredients:
+            ingredient ["quantity"] = ingredient ["quantity"] * scaling_factor
         self.servings = new_serving
+
 
     def display_ingredients(self):
         for ingredient in self.ingredients:

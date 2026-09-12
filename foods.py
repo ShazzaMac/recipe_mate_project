@@ -5,7 +5,9 @@ chicken = {
     "calories" : 300,
     "protein" : 20,
     "carbs": 2,
-    "fat" : 20
+    "fat" : 20,
+    "quantity" : 200,
+    "unit" : "grams"
 }
 
 pasta  = {
