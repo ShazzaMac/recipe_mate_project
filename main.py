@@ -110,8 +110,14 @@ print("Total protein:", total_protein)
 total_protein = recipe_functions.calculateTotalProtein(foods.ingredients)
 print("Total protein:", total_protein)
 
-#building the menu with a while loop and ifelse statements
+print(foods.recipes [0:3])
 
+featured_recipes = foods.recipes[0:3]
+
+for recipe in featured_recipes:
+    print(recipe)
+#building the menu with a while loop and if/else statements
+# --------------------------------------------------------
 choice = ""
 while choice != "8":
     print( "==================== \n" 
@@ -130,6 +136,9 @@ while choice != "8":
     choice = input("Please enter a choice")
     if choice == "1":
         print("you have chosen to: View recipes")
+        print("Available Recipes are :") 
+        for recipe in foods.recipes:
+            print(recipe)
     elif choice == "2":
         print("you have chosen to: Convert recipes")
     elif choice == "3":
