@@ -45,9 +45,12 @@ else:
 
 calories = 450
 protein = 42
-if calories <= 500 and protein >= 30:
+calorie_goal = 400
+protein_goal = 30
+high_calorie_limit = 700
+if calories <= calorie_goal and protein >= protein_goal:
     print("Within goal")
-elif calories <= 700:
+elif calories <= high_calorie_limit:
     print("Slightly above goal")
 else :
     print("Well above goal")
@@ -62,3 +65,31 @@ else:
     print("Does not meet requirements")
 
     #if calories <= calorie_goal and protein >= protein_goal:  - save rthis for later 
+servings = 2
+if servings == 4:
+    print("This recipe serves four")
+else:
+    print("This recipe does not serve four")
+
+servings = 0
+if not servings:
+    print("No servings entered")
+
+recipe_found = False
+if not recipe_found:
+    print("No recipe found")
+else:
+    print("Recipe found")    
+
+calorie_goal = 600
+protein_goal = 3
+calories, protein, carbs, fat = recipe_functions.calculateMacros(foods.rice, 200)#below unpacks the  returned values from a tuple into four separate variables. You can pass in any food so the function is reusable  and also adds an if/else condition 
+if calories <= calorie_goal and protein_goal >= protein_goal:
+    print("Recipe meets your goals")
+else:
+    print("Recipe does not meet your goals")    
+
+
+#working on for loops 
+for ingredient in foods.ingredients:
+    print(ingredient["name"])
