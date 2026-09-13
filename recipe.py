@@ -16,7 +16,6 @@ class Recipe:
             ingredient ["quantity"] = ingredient ["quantity"] * scaling_factor
         self.servings = new_serving
 
-
     def display_ingredients(self):
         for ingredient in self.ingredients:
             print(ingredient)
@@ -39,3 +38,4 @@ recipe1.scale_recipe(8)
 print(recipe1.servings)
 
 recipe1.display_ingredients()
+

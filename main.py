@@ -155,3 +155,6 @@ while choice != "8":
         print("you have chosen to: Exit")
     else:
         print("you have not chosen a valid option")
+
+
+recipe_functions.ounces_to_grams(4)

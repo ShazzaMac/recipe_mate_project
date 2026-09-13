@@ -39,3 +39,28 @@ def calculateTotalProtein(ingredient):
       for ingredient in foods.ingredients:
             total_protein = total_protein + ingredient["protein"]
       return total_protein
+
+#function to convert ounces to grams 
+def ounces_to_grams(ounces):
+     grams = ounces * 28.35
+     return grams 
+
+def grams_to_ounces(grams):
+     ounces = grams / 28.35
+     return ounces 
+
+def pounds_to_grams(pounds):
+      grams = pounds * 453.592
+      return grams
+
+def cups_to_ml(cups):
+      ml = cups * 236.588
+      return ml
+
+def tablespoon_to_ml(tablespoon):
+      ml = tablespoon * 14.787
+      return ml
+
+def teaspoon_to_ml(teaspoon):
+      ml = teaspoon * 4.929
+      return ml

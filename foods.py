@@ -15,7 +15,9 @@ pasta  = {
     "calories" : 340,
     "protein" : 5,
     "carbs": 22,
-    "fat" : 10
+    "fat" : 10,
+    "quantity" : 200,
+    "unit" : "grams"
 }
 
 rice  = {
@@ -23,7 +25,9 @@ rice  = {
     "calories" : 250,
     "protein" : 2,
     "carbs": 30,
-    "fat" : 1
+    "fat" : 1,
+    "quantity" : 200,
+    "unit" : "grams"
 }
 
 
@@ -32,7 +36,9 @@ broccoli  = {
     "calories" : 30,
     "protein" : 0,
     "carbs": 17,
-    "fat" : 0.5
+    "fat" : 0.5,
+   "quantity" : 200,
+    "unit" : "grams"
 }
 
 ingredients = [chicken, pasta, broccoli, rice]
