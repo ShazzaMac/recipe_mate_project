@@ -1,4 +1,4 @@
-#uses dictionaries and lists. All values will be per 100g - made up numbers to start with 
+#uses dictionaries and lists. All values will be per 200g - made up numbers to start with 
 
 chicken = {
     "name" : "Chicken Breast",
@@ -26,8 +26,8 @@ rice  = {
     "protein" : 2,
     "carbs": 30,
     "fat" : 1,
-    "quantity" : 200,
-    "unit" : "grams"
+    "quantity" : 4,
+    "unit" : "ounces"
 }
 
 
@@ -43,8 +43,8 @@ broccoli  = {
 
 ingredients = [chicken, pasta, broccoli, rice]
 #print(chicken, pasta, broccoli, rice)
-
-recipes = [
+# a list of pre - included recipes --> note to self changed the name from recipes to featured_recipes to prevent confusion with recipe class and objects
+featured_recipes = [
     "Mexican chicken + rice",
     "Air fried chicken + potatoes",
     "Biscoff and raspberry porridge",

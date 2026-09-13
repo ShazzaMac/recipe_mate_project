@@ -1,6 +1,7 @@
 #main file where everything will run 
 import recipe_functions
 import foods
+import recipe
 
 recipe_functions.printIngredientNames(foods.ingredients) #prints the ingredients names
 
@@ -112,10 +113,10 @@ print("Total protein:", total_protein)
 
 print(foods.recipes [0:3])
 
-featured_recipes = foods.recipes[0:3]
+#featured_recipes = foods.recipes[0:3]
 
-for recipe in featured_recipes:
-    print(recipe)
+#for recipe in featured_recipes:
+  #  print(recipe)
 #building the menu with a while loop and if/else statements
 # --------------------------------------------------------
 choice = ""
@@ -141,6 +142,8 @@ while choice != "8":
             print(recipe)
     elif choice == "2":
         print("you have chosen to: Convert recipes")
+        recipe.recipe1.convert_measurements()
+        recipe.recipe1.display_ingredients()
     elif choice == "3":
         print("you have chosen to: Change serving sizes")   
     elif choice == "4":
