@@ -1,5 +1,36 @@
-#all app functions will be stored here 
+#all app functions will be stored here including calculations and conversions 
 import foods #imports the food.py file so it can be used by the printIngredientNames function 
+import csv # built -in python module so we can use csv data 
+
+def loadIngredients():
+     with open("ingredients.csv", "r") as file: #opens the csv for reading and 'with' makes sure the file is closed after using
+          reader = csv.DictReader(file) #this line reads each row and uses the column headings as dictionary keys
+          ingredients = []#puts each read row into a list
+          for row in reader:
+               row["calories"] = float(row["calories"])#these next 4 lines convert the four nutritional values from strings to floats so they can be correctly used in calculations. If left as strings they would cause errors 
+               row["protein"] = float(row["protein"])
+               row["carbs"] = float(row["carbs"])
+               row["fat"] = float(row["fat"])
+               ingredients.append(row)
+     return ingredients# returns the list so it can be used by the program 
+
+#This function saves a users recipe to teh recipe csv file - it requires the user to provide a recipe name and serving size
+def saveRecipe(recipe_name, servings):
+     with open("recipes.csv", "a", newline="") as file: #a is used to append recipes to teh list and newline is to prevent blank lines from appearing within the csv records. 
+          writer = csv.writer(file)
+          writer.writerow([recipe_name, servings])
+          
+
+#This function loads saved recipes so they dont disappear after the program is closed.
+def loadRecipes():
+      with open("recipes.csv", "r") as file: #r signifies that the file will be read 
+           reader = csv.DictReader(file)
+           recipes = [] # stores the recipes 
+           for row in reader:# loops through the rows of recipes 
+             row["servings"] = int(row["servings"])#converts the servings from strings to integers to allow for calculations later 
+             recipes.append(row)
+      return recipes
+     
 
 def printIngredientNames(ingredients): #our parameter here is ingredients
         for ingredient in foods.ingredients:
@@ -79,6 +110,8 @@ def tablespoon_to_ml(tablespoon):
 def teaspoon_to_ml(teaspoon):
       ml = teaspoon * 4.929
       return round(ml,3)
+
+""" ----------------------------------------------------------------------------------------------------"""
 
 #function uses the in operator to search - https://realpython.com/python-in-operator/ 
 #https://www.codecademy.com/article/how-to-check-if-a-string-contains-a-substring-in-python

@@ -1,6 +1,6 @@
 
 #foods.py contains ingredients and ingredient dictionaries, featured recipes (one's i've already added to the program) and added recipes which will be added by the user
-#uses dictionaries and lists. All values will be per 200g - made up numbers to start with 
+#uses dictionaries and lists. All values will be per 100g when being calculated for macros  - made up numbers to start with 
 
 chicken = {
     "name" : "Chicken Breast",
@@ -18,7 +18,7 @@ pasta  = {
     "protein" : 5,
     "carbs": 22,
     "fat" : 10,
-    "quantity" : 200,
+    "quantity" : 300,
     "unit" : "grams"
 }
 
