@@ -79,3 +79,17 @@ def tablespoon_to_ml(tablespoon):
 def teaspoon_to_ml(teaspoon):
       ml = teaspoon * 4.929
       return round(ml,3)
+
+#function uses the in operator to search - https://realpython.com/python-in-operator/ 
+#https://www.codecademy.com/article/how-to-check-if-a-string-contains-a-substring-in-python
+def searchRecipes(search_term):
+    search_term = search_term.lower() #converts serach term to lower to help maximise the number of returned results 
+    found = False
+    for recipe_name in foods.featured_recipes:
+        if search_term in recipe_name.lower(): #converts recipe name to lower
+            print(recipe_name)
+            found = True
+    if found == False: #improves the user experience if no recipe matches are found by letting them know rather than returning straight to the menu 
+        print("No recipes found containing that ingredient sorry!.")
+
+searchRecipes("CHICKEN")
