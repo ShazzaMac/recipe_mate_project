@@ -125,8 +125,12 @@ print("Total protein:", total_protein)
 
 #recipe_functions.saveRecipe("Test Recipe", 4) - used to temporarily test i can append to recipe csv 
 
-
-
+print(recipe_functions.calculateCalories(300, 200))
+print(recipe_functions.calculateCalories(300))
+print(foods.ingredient_by_category)
+print(foods.featured_recipes[0:3])# an example of slicing 
+print(2**3) #an example of an exponent
+print(17 // 5) #an example of floor division 
 
 #building the menu with a while loop and if/else statements
 # --------------------------------------------------------
@@ -188,14 +192,18 @@ while choice != "9":
 
     elif choice == "5":
         print("you have chosen to: Set macro goals ")
-        calorie_goal = float(input("What is your daily calorie goal? "))
-        protein_goal = float(input("What is your daily protein goal? "))
-        carb_goal = float(input("What is your daily carbohydrate goal? "))
-        fat_goal = float(input("What is your daily fat goal? "))
-        if calorie_goal <=0 or protein_goal <=0 or carb_goal <=0 or fat_goal <=0:
+        try:#a try/except block to prevent the user from trying to use non-numerical values 
+         calorie_goal = float(input("What is your daily calorie goal? "))
+         protein_goal = float(input("What is your daily protein goal? "))
+         carb_goal = float(input("What is your daily carbohydrate goal? "))
+         fat_goal = float(input("What is your daily fat goal? "))
+         if calorie_goal <=0 or protein_goal <=0 or carb_goal <=0 or fat_goal <=0:
            print("Sorry, that isn't a valid choice. Please enter a positive number.")
-        else:
-            print("your goals have been recorded as: ",calorie_goal, protein_goal, carb_goal, fat_goal )   
+         else:
+           print("your goals have been recorded as: ",calorie_goal, protein_goal, carb_goal, fat_goal )   
+        except ValueError:
+          print("Sorry, please enter numbers only.")
+      
 
     elif choice == "6":
         print("you have chosen to: Compare recipe macros to goals")

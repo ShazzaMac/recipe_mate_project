@@ -36,7 +36,9 @@ def printIngredientNames(ingredients): #our parameter here is ingredients
         for ingredient in foods.ingredients:
             print("Ingredient:", ingredient["name"])
 
-def calculateCalories(calories_per_100g, grams): #function to calculate calories - calculated by the amount of calories whilst the grams is a percentage because all ingredients macros are based on 100g
+def calculateCalories(calories_per_100g, grams = 100):
+     #function to calculate calories - calculated by the amount of calories whilst the grams is a percentage because all ingredients macros are based on 100g. The default parameter for grams is also 100
+    """Calculate calories based on calories per 100g and the amount in grams."""
     result = calories_per_100g * grams / 100
     return result            
 
@@ -60,6 +62,7 @@ def calculateMacros(ingredient, grams): #here we are making use of dictionaries 
 # a function that loops through all ingredients in a recipe and adds their values together using a for loop
 #the function starts the 4 macros at 0 then as it loops through the ingredients it used calculateMacros() to accumulate the values together
 def calculateRecipeMacros (ingredients):
+      """Calculate the total calories, protein, carbs and fat for a recipe.""" 
       calories = 0 
       carbs = 0
       fat = 0
