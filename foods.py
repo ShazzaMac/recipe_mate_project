@@ -1,3 +1,5 @@
+
+#foods.py contains ingredients and ingredient dictionaries, featured recipes (one's i've already added to the program) and added recipes which will be added by the user
 #uses dictionaries and lists. All values will be per 200g - made up numbers to start with 
 
 chicken = {
@@ -56,6 +58,9 @@ featured_recipes = [
     "Beef strip stirfry with bao buns and rice",
     "Chicken fajitas"
 ]
+
+added_recipes = [] #this will be the collection of recipes added by the user 
+
 
 #this will be a tuple because the measurements are fixed and this will stop a user from trying to change them
 measurements = (

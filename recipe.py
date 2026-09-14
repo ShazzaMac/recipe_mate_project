@@ -1,4 +1,4 @@
-#this file contains the recipe class and its functions
+#this file contains the recipe class and its functions as well as any recipe objects like recipe1
 
 # requires the following imports 
 import foods

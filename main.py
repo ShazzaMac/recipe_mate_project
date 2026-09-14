@@ -1,4 +1,4 @@
-#main file where everything will run 
+#main file where everything will run. It includes the menu and calls the functions that the menu uses and stores any user input into relevant variables.
 import recipe_functions
 import foods
 import recipe
@@ -117,12 +117,16 @@ print("Total protein:", total_protein)
 
 #for recipe in featured_recipes:
   #  print(recipe)
+
+
+
+
 #building the menu with a while loop and if/else statements
 # --------------------------------------------------------
 choice = ""
 while choice != "8":
     print( "==================== \n" 
-     "RecipeMate \n" 
+     "Recipe Mate \n" 
 "==================== \n"
 "1. View recipes \n"
 "2. Convert recipes \n"
@@ -141,6 +145,8 @@ while choice != "8":
         print("Available Recipes are :") 
         for recipe_name in foods.featured_recipes:
             print(recipe_name)
+        for added_recipe in foods.added_recipes: #allows the user to see their added recipe in the list when option 1 is selected after option 8
+            print(added_recipe)
 
     elif choice == "2":
         print("you have chosen to: Convert recipes")
@@ -205,6 +211,9 @@ while choice != "8":
     elif choice == "8":
         print("you have chosen to: Add recipes")
         recipe_name = input("What is the name of your recipe? ")
+        foods.added_recipes.append(recipe_name)
+        print(f"{recipe_name} has been added successfully to Recipe Mate!")#by using an f string the user is able to get confirmation that their recipe was added by name 
+
 
     elif choice == "9":
         print("you have chosen to: Exit")
