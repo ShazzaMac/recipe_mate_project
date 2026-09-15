@@ -107,6 +107,7 @@ while choice != "9":
            else:
                 print("This recipe is within your protein goal -> great choice!")  
 
+    #uses the search recipe function to find a substring in a string
     elif choice == "7":
         print("you have chosen to: search recipes ")
         search_term = input("What recipe would you like to search for? ")
