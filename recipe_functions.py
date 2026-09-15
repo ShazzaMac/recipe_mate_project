@@ -79,7 +79,7 @@ def calculateRecipeMacros (ingredients):
 # MEASUREMENT CONVERSION FUNCTIONS
 # Thefunctions below are to help convert between metric and imperial measuremets.
 #  The first one is to convert ounces to grams --> this is currently limited
-#  to 7 options for the scope of the project but i could add more if i continue
+#  to 6 options for the scope of the project but i could add more if i continue
 #  to build on the app at a later date
 # ============================================================
 
@@ -99,36 +99,31 @@ def pounds_to_grams(pounds):
       return round(grams, 3)
 
 def cups_to_ml(cups):
-      """Converts cups to mls."""
+      """Converts cups to millilitres."""
       ml = cups * 236.588
       return round(ml,3)
 
 def tablespoon_to_ml(tablespoon):
-      """Converts tablespoon to mls."""
+      """Converts tablespoon to millilitres."""
       ml = tablespoon * 14.787
       return round(ml,3)
 
 def teaspoon_to_ml(teaspoon):
-      """Convert teasponn to mls."""
+      """Convert teaspoon to millilitres."""
       ml = teaspoon * 4.929
       return round(ml,3)
-
-def convertToMetric(amount, unit):
-     """Converts imperial units to metric."""
-     result = amount/ unit
-     return result 
 
 # ============================================================
 # SEARCH AND COMPARISON FUNCTIONS
 # ============================================================
 
-#function uses the in operator to search - https://realpython.com/python-in-operator/ 
-#https://www.codecademy.com/article/how-to-check-if-a-string-contains-a-substring-in-python
+#function that checks if a search term appears anywhere in a recipe name by using the in operator 
 def searchRecipes(search_term):
-    search_term = search_term.lower() #converts serach term to lower to help maximise the number of returned results 
+    """Searches featured recipes for a matching search term."""
+    search_term = search_term.lower() #converts serach term to lowercase to help maximise the number of returned results 
     found = False
     for recipe_name in foods.featured_recipes:
-        if search_term in recipe_name.lower(): #converts recipe name to lower
+        if search_term in recipe_name.lower(): #converts recipe name to lowercase
             print(recipe_name)
             found = True
     if found == False: #improves the user experience if no recipe matches are found by letting them know rather than returning straight to the menu 
@@ -137,12 +132,11 @@ def searchRecipes(search_term):
 #searchRecipes("CHICKEN")
 
 def compareRecipes(recipe_a, recipe_b):
-    """Compare the calorie totals of two recipes. Creates tuples"""
+    """Compares the calorie totals of two recipe objects."""
     recipe_a_macros =calculateRecipeMacros(recipe_a.ingredients)
     recipe_b_macros = calculateRecipeMacros(recipe_b.ingredients)
     recipe_a_calories = recipe_a_macros[0]
     recipe_b_calories = recipe_b_macros[0]
-    """Returns the string responses rather than printing them """
     if recipe_a_calories < recipe_b_calories:
         return f"{recipe_a.name} has fewer calories than {recipe_b.name}."
     elif recipe_b_calories < recipe_a_calories:
@@ -157,18 +151,21 @@ def compareRecipes(recipe_a, recipe_b):
 # They are retained as evidence of additional assessment requirements.
 # ============================================================
 def displayRecipe(recipe):
+      """Example of a function that displays a recipe."""
       return           
 
 def scaleRecipe(amount, servings):
+      """Example of a function that scales a recipe."""
       result = amount/ servings
       return result  
 
 def calculateProtein(protein_per_100g, grams):
+         """Example of a function that does a calculation"""
          result = protein_per_100g * grams / 100
          return result   
 
-#function to calculate the total protein of ingredients. ingredients is the parameter
 def calculateTotalProtein(ingredients):
+      """Function to calculate the total protein of ingredients. ingredients is the parameter"""
       total_protein = 0
       for ingredient in ingredients:
             total_protein = total_protein + ingredient["protein"]

@@ -22,8 +22,9 @@ for ingredient in csv_ingredients:
 # RECIPE CLASS
 # ============================================================
 
-#initialises the class recipe and it's attributes
+#initialises the class recipe and its attributes
 class Recipe:
+    """This class represents a recipe with ingredients and serving information."""
     def __init__(self, name, ingredients, servings ):#initialising the object
         self.name = name
         self.ingredients = ingredients

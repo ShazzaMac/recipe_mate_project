@@ -5,11 +5,11 @@ import recipe
 
 # Loads saved recipe and ingredient data when the program starts.
 csv_recipes = recipe_functions.loadRecipes()
-csv_ingredients = recipe_functions.loadIngredients()
 
 # --------------------------------------------------------
 # Main menu loop. The program continues until the user chooses Exit
-# Makes use of a while loop and if/else statements
+# Makes use of a while loop and if/else statements and
+# Keeps the menu running until the user chooses Exit.
 # --------------------------------------------------------
 calorie_goal = None
 protein_goal = None
