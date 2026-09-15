@@ -2,6 +2,10 @@
 import foods #imports the food.py file so it can be used by the printIngredientNames function 
 import csv # built -in python module so we can use csv data 
 
+# ============================================================
+# CSV DATA FUNCTIONS
+# ============================================================
+
 def loadIngredients():
      with open("ingredients.csv", "r") as file: #opens the csv for reading and 'with' makes sure the file is closed after using
           reader = csv.DictReader(file) #this line reads each row and uses the column headings as dictionary keys
@@ -30,7 +34,10 @@ def loadRecipes():
              row["servings"] = int(row["servings"])#converts the servings from strings to integers to allow for calculations later 
              recipes.append(row)
       return recipes
-     
+
+# ============================================================
+# RECIPE AND MACRO FUNCTIONS
+# ============================================================
 
 def printIngredientNames(ingredients): #our parameter here is ingredients
         for ingredient in ingredients:
@@ -42,14 +49,6 @@ def calculateCalories(calories_per_100g, grams = 100):
     result = calories_per_100g * grams / 100
     return result            
 
-def convertToMetric(amount, unit): #function to convert between metric and imperial units - requires amount and unit to perform calculation 
-     result = amount/ unit
-     return result            
-
-
-def scaleRecipe(amount, servings):
-      result = amount/ servings
-      return result  
 
 def calculateMacros(ingredient, grams): #here we are making use of dictionaries nside the function
       calories = ingredient["calories"] * grams / 100
@@ -75,19 +74,9 @@ def calculateRecipeMacros (ingredients):
         fat = fat + fat_for_ingredient
       return calories, protein, carbs, fat
 
-def displayRecipe(recipe):
-      return
-
-def calculateProtein(protein_per_100g, grams):
-         result = protein_per_100g * grams / 100
-         return result   
-
-#function to calculate the total protein of ingredients. ingredients is the parameter
-def calculateTotalProtein(ingredient):
-      total_protein = 0
-      for ingredient in foods.ingredients:
-            total_protein = total_protein + ingredient["protein"]
-      return total_protein
+# ============================================================
+# MEASUREMENT CONVERSION FUNCTIONS
+# ============================================================
 
 #functions below are to help convert between metric and imperial measuremets. The first one is to convert ounces to grams --> this is currently limited to 6 options for the scope of the project but i could add more if i continue to build on the app at a later date
 def ounces_to_grams(ounces):
@@ -114,7 +103,13 @@ def teaspoon_to_ml(teaspoon):
       ml = teaspoon * 4.929
       return round(ml,3)
 
-""" ----------------------------------------------------------------------------------------------------"""
+def convertToMetric(amount, unit): #function to convert between metric and imperial units - requires amount and unit to perform calculation 
+     result = amount/ unit
+     return result 
+
+# ============================================================
+# SEARCH AND COMPARISON FUNCTIONS
+# ============================================================
 
 #function uses the in operator to search - https://realpython.com/python-in-operator/ 
 #https://www.codecademy.com/article/how-to-check-if-a-string-contains-a-substring-in-python
@@ -143,3 +138,27 @@ def compareRecipes(recipe_a, recipe_b):
         return f"{recipe_b.name} has fewer calories than {recipe_a.name}."
     else:
         return "Both recipes have the same number of calories."
+    
+# ============================================================
+# PRACTICE /  ADDITIONAL ASSESSMENT FUNCTIONS
+## These functions demonstrate additional Python techniques
+# that could be integrated into future versions of RecipeMate.
+# They are retained as evidence of additional assessment requirements.
+# ============================================================
+def displayRecipe(recipe):
+      return           
+
+def scaleRecipe(amount, servings):
+      result = amount/ servings
+      return result  
+
+def calculateProtein(protein_per_100g, grams):
+         result = protein_per_100g * grams / 100
+         return result   
+
+#function to calculate the total protein of ingredients. ingredients is the parameter
+def calculateTotalProtein(ingredients):
+      total_protein = 0
+      for ingredient in ingredients:
+            total_protein = total_protein + ingredient["protein"]
+      return total_protein

@@ -1,6 +1,9 @@
 
 #foods.py contains ingredients and ingredient dictionaries, featured recipes (one's i've already added to the program) and added recipes which will be added by the user
 #uses dictionaries and lists. All values will be per 100g when being calculated for macros  - made up numbers to start with 
+# ============================================================
+# INGREDIENT DATA
+# ============================================================
 
 chicken = {
     "name" : "Chicken Breast",
@@ -65,7 +68,7 @@ cheese = {
 
 
 sauce = {
-    "name": "Cheese",
+    "name": "Sauce",
     "calories": 101,
     "protein": 6,
     "carbs": 32,
@@ -84,6 +87,10 @@ chicken_pasta_ingredient = {
     "quantity": 200,
     "unit": "grams"
 }
+
+# ============================================================
+# RECIPE INGREDIENT LISTS
+# ============================================================
 
 ingredients = [chicken, pasta, broccoli, rice]
 #print(chicken, pasta, broccoli, rice)
@@ -105,8 +112,11 @@ fish_tacos = [
    
 ]
 
+# ============================================================
+# RECIPE DATA
+# ============================================================
 
-# a list of pre - included recipes --> note to self changed the name from recipes to featured_recipes to prevent confusion with recipe class and objects
+# Pre-included recipe names displayed by the application.
 featured_recipes = [
     "Mexican chicken + rice",
     "Air fried chicken + potatoes",
@@ -122,6 +132,9 @@ featured_recipes = [
 
 added_recipes = [] #this will be the collection of recipes added by the user 
 
+# ============================================================
+# ASSESSMENT DATA STRUCTURES
+# ============================================================
 
 #this will be a tuple because the measurements are fixed and this will stop a user from trying to change them
 measurements = (

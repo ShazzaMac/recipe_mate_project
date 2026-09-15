@@ -1,5 +1,7 @@
 #this file contains the recipe class and its functions as well as any recipe objects like recipe1
-
+# ============================================================
+# IMPORTS AND CSV DATA
+# ============================================================
 # requires the following imports 
 import foods
 import recipe_functions
@@ -15,6 +17,10 @@ for ingredient in csv_ingredients:
     if ingredient["name"] == "Chickpeas":
        ingredient["quantity"] = 100
        fish_taco_ingredients.append(ingredient)
+
+# ============================================================
+# RECIPE CLASS
+# ============================================================
 
 #initialises the class recipe and it's attributes
 class Recipe:
@@ -62,24 +68,39 @@ class Recipe:
                 ingredient["quantity"] = ml
                 ingredient["unit"] = "ml"   
 
+# ============================================================
+# RECIPE OBJECTS
+# ============================================================
 
-#below are the recipe objects, ingredients are derived from ingredient dictionaries in foods.py
+# Below are the recipe objects.
+# Recipe 1 and 2 use ingredients from foods.py.
+# Recipe 3 uses ingredients loaded from ingredients.csv.
 recipe1 = Recipe( "Mexican chicken + Rice", foods.mexican_chicken_rice, 4) #by importing foods i can import the ingedients without having to re-write them 
 recipe2 = Recipe("Chicken + Pasta", foods.chicken_pasta, 2)
 recipe3 = Recipe("Fish tacos + 3 bean salad", fish_taco_ingredients, 3)#uses ingredients from the csv
 
-recipe3.display_ingredients()
-print(recipe_functions.compareRecipes(recipe1, recipe2))
-print(recipe_functions.compareRecipes(recipe1, recipe3))
+# ============================================================
+# TEST / DEMONSTRATION CODE
+# The code below was used to test function and method calls
+# and has been kept as assessment demonstration evidence.
+# It is commented out so it does not run automatically when
+# recipe.py is imported by main.py.
+# ============================================================
 
+#recipe3.display_ingredients()
 
-print(recipe1.name)
-#can also be called as:
-recipe1.display()
-recipe1.convert_measurements()
-recipe1.display_ingredients()
+#print(recipe_functions.compareRecipes(recipe1, recipe2))
 
-recipe1.scale_recipe(8)
-print(recipe1.servings)
+#print(recipe_functions.compareRecipes(recipe1, recipe3))
+
+#recipe1.display()
+
+#recipe1.convert_measurements()
+
+#recipe1.display_ingredients()
+
+#recipe1.scale_recipe(8)
+
+#print(recipe1.servings)
 
 
