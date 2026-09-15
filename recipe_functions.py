@@ -7,6 +7,7 @@ import csv # built -in python module so we can use csv data
 # ============================================================
 
 def loadIngredients():
+     """Loads ingredient data from the ingredients CSV file."""
      with open("ingredients.csv", "r") as file: #opens the csv for reading and 'with' makes sure the file is closed after using
           reader = csv.DictReader(file) #this line reads each row and uses the column headings as dictionary keys
           ingredients = []#puts each read row into a list
@@ -18,15 +19,14 @@ def loadIngredients():
                ingredients.append(row)
      return ingredients# returns the list so it can be used by the program 
 
-#This function saves a users recipe to teh recipe csv file - it requires the user to provide a recipe name and serving size
 def saveRecipe(recipe_name, servings):
+     """Saves a users recipe name and serving size to the recipes CSV file."""
      with open("recipes.csv", "a", newline="") as file: #a is used to append recipes to teh list and newline is to prevent blank lines from appearing within the csv records. 
           writer = csv.writer(file)
           writer.writerow([recipe_name, servings])
           
-
-#This function loads saved recipes so they dont disappear after the program is closed.
 def loadRecipes():
+      """Load saved recipes from the recipes CSV file so they dont disappear after the program is closed.."""
       with open("recipes.csv", "r") as file: #r signifies that the file will be read 
            reader = csv.DictReader(file)
            recipes = [] # stores the recipes 
@@ -40,17 +40,18 @@ def loadRecipes():
 # ============================================================
 
 def printIngredientNames(ingredients): #our parameter here is ingredients
+        """Prints the name of each ingredient in a list."""
         for ingredient in ingredients:
             print("Ingredient:", ingredient["name"])
 
 def calculateCalories(calories_per_100g, grams = 100):
-     #function to calculate calories - calculated by the amount of calories whilst the grams is a percentage because all ingredients macros are based on 100g. The default parameter for grams is also 100
-    """Calculate calories based on calories per 100g and the amount in grams."""
+    """Calculates the calories based on calories per 100g and the amount in grams."""
     result = calories_per_100g * grams / 100
     return result            
 
 
-def calculateMacros(ingredient, grams): #here we are making use of dictionaries nside the function
+def calculateMacros(ingredient, grams):
+      """Calculates the calories based on calories per 100g and the amount in grams. """
       calories = ingredient["calories"] * grams / 100
       protein =  ingredient["protein"] * grams / 100
       carbs =  ingredient["carbs"] * grams / 100
@@ -61,7 +62,7 @@ def calculateMacros(ingredient, grams): #here we are making use of dictionaries 
 # a function that loops through all ingredients in a recipe and adds their values together using a for loop
 #the function starts the 4 macros at 0 then as it loops through the ingredients it used calculateMacros() to accumulate the values together
 def calculateRecipeMacros (ingredients):
-      """Calculate the total calories, protein, carbs and fat for a recipe.""" 
+      """Calculates the total calories, protein, carbs and fat for a recipe.""" 
       calories = 0 
       carbs = 0
       fat = 0
@@ -76,34 +77,44 @@ def calculateRecipeMacros (ingredients):
 
 # ============================================================
 # MEASUREMENT CONVERSION FUNCTIONS
+# Thefunctions below are to help convert between metric and imperial measuremets.
+#  The first one is to convert ounces to grams --> this is currently limited
+#  to 7 options for the scope of the project but i could add more if i continue
+#  to build on the app at a later date
 # ============================================================
 
-#functions below are to help convert between metric and imperial measuremets. The first one is to convert ounces to grams --> this is currently limited to 6 options for the scope of the project but i could add more if i continue to build on the app at a later date
 def ounces_to_grams(ounces):
+     """Converts ounces to grams."""
      grams = ounces * 28.35
      return round(grams, 3) # returns the value as rounded to no more than 3 decimal places. This has been applied to all conversions for consistency.
 
 def grams_to_ounces(grams):
+     """Converts grams to ounces."""
      ounces = grams / 28.35
      return round(ounces, 3) 
 
 def pounds_to_grams(pounds):
+      """Converts pounds to grams."""
       grams = pounds * 453.592
       return round(grams, 3)
 
 def cups_to_ml(cups):
+      """Converts cups to mls."""
       ml = cups * 236.588
       return round(ml,3)
 
 def tablespoon_to_ml(tablespoon):
+      """Converts tablespoon to mls."""
       ml = tablespoon * 14.787
       return round(ml,3)
 
 def teaspoon_to_ml(teaspoon):
+      """Convert teasponn to mls."""
       ml = teaspoon * 4.929
       return round(ml,3)
 
-def convertToMetric(amount, unit): #function to convert between metric and imperial units - requires amount and unit to perform calculation 
+def convertToMetric(amount, unit):
+     """Converts imperial units to metric."""
      result = amount/ unit
      return result 
 
