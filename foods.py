@@ -43,8 +43,69 @@ broccoli  = {
     "unit" : "grams"
 }
 
+pepper = {
+    "name": "Pepper",
+    "calories": 40,
+    "protein": 0.2,
+    "carbs": 6,
+    "fat": 0,
+    "quantity": 100,
+    "unit": "grams"
+}
+
+cheese = {
+    "name": "Cheese",
+    "calories": 201,
+    "protein": 16,
+    "carbs": 12,
+    "fat": 36,
+    "quantity": 100,
+    "unit": "grams"
+}
+
+
+sauce = {
+    "name": "Cheese",
+    "calories": 101,
+    "protein": 6,
+    "carbs": 32,
+    "fat": 6,
+    "quantity": 100,
+    "unit": "grams"
+}
+
+#below i am creating a separate ingredient dictionary for the chicken item in chicken pasta so that if it's serving size gets updated it doesnt impact the chicken dictionary used by other recipe objects 
+chicken_pasta_ingredient = {
+    "name": "Chicken Breast",
+    "calories": 300,
+    "protein": 20,
+    "carbs": 2,
+    "fat": 20,
+    "quantity": 200,
+    "unit": "grams"
+}
+
 ingredients = [chicken, pasta, broccoli, rice]
 #print(chicken, pasta, broccoli, rice)
+
+mexican_chicken_rice = [
+    chicken,
+    rice,
+    pepper,
+]
+
+chicken_pasta = [
+    chicken_pasta_ingredient,
+    pasta,
+    cheese,
+    sauce,
+]
+
+fish_tacos = [
+   
+]
+
+
 # a list of pre - included recipes --> note to self changed the name from recipes to featured_recipes to prevent confusion with recipe class and objects
 featured_recipes = [
     "Mexican chicken + rice",

@@ -33,7 +33,7 @@ def loadRecipes():
      
 
 def printIngredientNames(ingredients): #our parameter here is ingredients
-        for ingredient in foods.ingredients:
+        for ingredient in ingredients:
             print("Ingredient:", ingredient["name"])
 
 def calculateCalories(calories_per_100g, grams = 100):
@@ -128,4 +128,18 @@ def searchRecipes(search_term):
     if found == False: #improves the user experience if no recipe matches are found by letting them know rather than returning straight to the menu 
         print("No recipes found containing that ingredient sorry!.")
 
-searchRecipes("CHICKEN")
+#searchRecipes("CHICKEN")
+
+def compareRecipes(recipe_a, recipe_b):
+    """Compare the calorie totals of two recipes. Creates tuples"""
+    recipe_a_macros =calculateRecipeMacros(recipe_a.ingredients)
+    recipe_b_macros = calculateRecipeMacros(recipe_b.ingredients)
+    recipe_a_calories = recipe_a_macros[0]
+    recipe_b_calories = recipe_b_macros[0]
+    """Returns the string responses rather than printing them """
+    if recipe_a_calories < recipe_b_calories:
+        return f"{recipe_a.name} has fewer calories than {recipe_b.name}."
+    elif recipe_b_calories < recipe_a_calories:
+        return f"{recipe_b.name} has fewer calories than {recipe_a.name}."
+    else:
+        return "Both recipes have the same number of calories."

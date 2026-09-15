@@ -4,9 +4,12 @@ import foods
 import recipe
 
 #below are the csv files that are loaded when the program starts 
-csv_ingredients = recipe_functions.loadIngredients()
 csv_recipes = recipe_functions.loadRecipes()
+csv_ingredients = recipe_functions.loadIngredients()
 
+
+      
+print(csv_ingredients)
 
 recipe_functions.printIngredientNames(foods.ingredients) #prints the ingredients names
 
@@ -90,7 +93,7 @@ else:
 calorie_goal = 600
 protein_goal = 3
 calories, protein, carbs, fat = recipe_functions.calculateMacros(foods.rice, 200)#below unpacks the  returned values from a tuple into four separate variables. You can pass in any food so the function is reusable  and also adds an if/else condition 
-if calories <= calorie_goal and protein_goal >= protein_goal:
+if calories <= calorie_goal and protein >= protein_goal:
     print("Recipe meets your goals")
 else:
     print("Recipe does not meet your goals")    
