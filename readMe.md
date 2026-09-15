@@ -8,7 +8,8 @@ The aim of this project is to allow a user to:
 3. Change serving sizes
 4. Calculate macros
 5. Set macro goals
-6. Find recipes
-7. Add recipes
-8. Exit
+6. Compare macros to goals
+7. Find recipes
+8. Add recipes
+9. Exit
 
